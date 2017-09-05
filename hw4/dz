@@ -1,0 +1,11 @@
+Домашнее задание 4
+Задачи
+Реализовать класс Person, у которого должно быть два публичных поля: age и name. Также у него должен быть следующий набор методов: know(person), который позволяет добавить другого человека в список знакомых. И метод is_known(person), который возвращает знает ли знакомы ли два человека
+Есть класс, который выводи информацию в консоль: Printer, у него есть метод: log(*values). Написать класс FormattedPrinter, который выводит в консоль информацию, окружая ее строками из *
+Написать класс Animal и Human, сделать так, чтобы некоторые животные были опасны для человека (хищники, ядовитые). Другие - нет. За что будет отвечать метод is_dangerous(animal)
+Материалы
+Все материалы будут актуальны для следующего занятия
+super: http://pythonicway.com/education/python-oop-themes/21-python-inheritance
+магические методы: https://habrahabr.ru/post/186608/
+class attributes vs instance attributes: http://stackoverflow.com/questions/207000/python-difference-between-class-and-instance-attributes
+

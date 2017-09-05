@@ -1,0 +1,69 @@
+
+ sudo -u postgres psql
+ \c tceh_db
+ \l
+ \dt
+
+Создать таблицы, чтобы хранить:
+- Товары (id, name, price)
+- Покупки (id, quantity, email, item_id)
+- Состояние товара на складе (id, quantity, item_id)
+
+Вставить 4 товароа
+Вставить 10 покупок
+Вставить 4 состояния на складе
+
+Выбрать данные из таблицы товаров с соединение с покупками
+Выбрать данные из таблицы товаров с соединение со складом
+Выбрать данные из таблицы товаров с соединение со обоими таблицами
+
+CREATE SEQUENCE public.tovary_id_seq;
+ALTER SEQUENCE public.tovary_id_seq owner to tceh;
+
+CREATE TABLE public.tovary
+(
+id integer NOT NULL DEFAULT nextval('tovary_id_seq'::regclass), 
+name character NOT NULL, 
+price integer NOT NULL,
+constraint tovary_pkey primary key (id)
+) ;
+ALTER TABLE public.tovary
+OWNER TO tceh;
+
+CREATE TABLE public.pokupki
+(
+id integer NOT NULL, 
+quantity integer NOT NULL, 
+email character NOT NULL, 
+item_id integer NOT NULL
+) ;
+ALTER TABLE public.pokupki
+OWNER TO tceh;
+
+CREATE TABLE public.sklad
+(
+id integer NOT NULL, 
+quantity integer NOT NULL, 
+item_id integer NOT NULL
+) ;
+ALTER TABLE public.sklad
+OWNER TO tceh;
+
+
+insert into public.tovary ( name, price)
+	values (coca-cola, 55),(snikers, 23),(vodka, 300), (big-mak, 95);
+
+
+_________________________________
+
+
+CREATE TABLE public.pokupki
+(
+id integer NOT NULL DEFAULT nextval('pokupki_id_seq'::regclass), 
+quantity integer NOT NULL, 
+email character NOT NULL, 
+item_id integer NOT NULL,
+
+) ;
+ALTER TABLE public.pokupki
+OWNER TO tceh;
